@@ -25,6 +25,7 @@
 
     <!-- content -->
     <div class="flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+        <p>Here API TEST Message -> {{msgs}}</p>
         <slot />
     </div>  <!-- content -->
 
@@ -43,5 +44,21 @@ export default {
         laravelVersion: String,
         phpVersion: String,
     },
+     data: function () {
+         return {
+            msgs: []
+         }
+     },
+    methods: {
+         getMsg() {
+             axios.get('/api/apitest')
+                    .then((res) => {
+                        this.msgs = res.data;
+                    });
+         }
+    },
+    mounted() {
+        this.getMsg();
+    }
 }
 </script>

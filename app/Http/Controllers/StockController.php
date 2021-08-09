@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class StockController extends Controller
 {
+    public function apitest()
+    {
+        //
+        $msg = "api test message!";
+        return $msg;
+    }
+
     /**
      * Display a listing of the resource.
      *
