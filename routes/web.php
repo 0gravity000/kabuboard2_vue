@@ -24,6 +24,15 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/guest-dashboard', function () {
+    return Inertia::render('GuestDashboard', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);    
+});
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
