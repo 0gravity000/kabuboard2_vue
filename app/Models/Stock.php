@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Stock extends Model
 {
     use HasFactory;
+
+    public function market()
+    {
+        return $this->belongsTo('App\Market');
+    }
+
+    public function industry()
+    {
+        return $this->belongsTo('App\Industry');
+    }    
 }
