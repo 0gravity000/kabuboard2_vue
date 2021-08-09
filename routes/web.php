@@ -38,3 +38,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+//Route::get('/stock/import', 'App\Http\Controllers\StockController@import'); //debug code
+
+

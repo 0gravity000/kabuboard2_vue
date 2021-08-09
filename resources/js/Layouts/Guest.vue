@@ -25,7 +25,10 @@
 
     <!-- content -->
     <div class="flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-        <p>Here API TEST Message -> {{msgs}}</p>
+        <!-- debug code Stock、Market、IndustryをスクレイピングしてDBに格納する
+        <Link href="/stock/import">hogehoge{{msgs}}</Link>
+        <p>Here Stocks Import Message -> {{msgs}}</p>
+        -->
         <slot />
     </div>  <!-- content -->
 
@@ -44,14 +47,17 @@ export default {
         laravelVersion: String,
         phpVersion: String,
     },
-     data: function () {
+    /*  Stock、Market、IndustryをスクレイピングしてDBに格納する処理は
+        全ページを一度にスクレイピングはできない。
+        30秒のタイムアウトにひっかかるので、スケジューラーで実行するようにする
+    data: function () {
          return {
             msgs: []
          }
      },
     methods: {
          getMsg() {
-             axios.get('/api/apitest')
+             axios.get('/api/stock/import')
                     .then((res) => {
                         this.msgs = res.data;
                     });
@@ -60,5 +66,6 @@ export default {
     mounted() {
         this.getMsg();
     }
+    */
 }
 </script>
