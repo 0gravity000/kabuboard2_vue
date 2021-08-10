@@ -19,4 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/apitest', 'App\Http\Controllers\StockController@apitest'); //experiment code
-Route::get('/stock/import', 'App\Http\Controllers\StockController@import'); 
+Route::get('/stock/import', 'App\Http\Controllers\StockController@import'); //
+Route::get('/stock/index', 'App\Http\Controllers\StockController@index'); //

@@ -375,6 +375,9 @@ class StockController extends Controller
     public function index()
     {
         //
+        $stocks = Stock::all();
+        return $stocks;
+        //return redirect('/guest-dashboard', compact('stocks'));
     }
 
     /**
