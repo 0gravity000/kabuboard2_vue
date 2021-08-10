@@ -28,7 +28,7 @@ class Kernel extends ConsoleKernel
     {
         $schedule->call(function () {
             event(new DialyMeigarasCheck());
-        })->dailyAt('10:45');
+        })->dailyAt('17:10');
 
         // $schedule->command('inspire')->hourly();
     }
