@@ -15,9 +15,14 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
+        'App\Events\DialyMeigarasCheck' => [
+            'App\Listeners\ScrapingMeigarasToDB',
+        ],
+        /*
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        */
     ];
 
     /**
